@@ -1,0 +1,119 @@
+<b>Период</b>
+<b>Правитель/Годы</b>
+<b>Приход к власти/<br> Предпосылки,<br>Основания</b>
+<b>Общее описание правления/<br>пояснения,<br>дополнения</b>
+<b>Внешняя политика</b><br>(дипломатическая, военная)<br>и взаимоотношения
+<b>Внутренняя политика</b><br>общее описание, <br> пояснения, <br>дополнения
+Общее описание<br>Экономич. политика
+Финансы/<br>Налоговая система
+Собственность
+С/Х
+Производство
+Транспорт <br>Торговля<br> Экспорт/импорт
+Итоги эк. политики
+Общее описание<br>Социальная политика
+Социально-экономическая <br>структура общества
+Крестьянский вопрос/<br>Крестьянская политика
+Социальные процессы<br>(движения)
+<b>Армия</b>
+Высшая власть
+Представительная/<br>Законодательная
+Исполнительная<br>(правительство)
+Судебная
+(Местное)<br>самоуправление
+<b>Система передачи власти</b>
+<b>Законодательство</b><br>Список принимаемых<br> нормативнопрововых<br> актов
+<b>Территориальное устройство</b><br><b>Изменение <br>территории</b>
+<b>Национальный вопрос</b>
+<b>Политические идеологии,<br>процессы, движения/<br>Общественная мысль</b>
+<b>Религия/Церковь</b>
+<b>Итоги периода</b>
+Общая характеристика/<br>Идеология
+Образование/Просвещение
+Экспедиции
+Наука/Летописание
+Литература
+Архитектура
+Изобразительное
+Музыка
+Театр, кино
+Ремёсла /<br>ремесленное производство
+Народная
+Быт
+<b>Персоналии</b>
+<b>Понятия</b>
+<b>Даты истории России</b>
+<b>Мировая история</b>
+<b>Договоры (названия)</b>
+<b>Карты, выжные места</b>
+<b>Изображения</b>
+<b>Анализ событий</b>
+<b>Дискуссионные вопросы</b>
+
+<span id = "okNavSfer" style = "position:fixed;display:none;">
+	<div class = "navSf" id = "sf0" onclick = "goToSf('row_1_3')">Приход к власти</div>
+	<div class = "navSf" id = "sf1" onclick = "goToSf('row_1_4')">Общее опиисание правления</div>
+	<div class = "navSf" id = "sf2" onclick = "goToSf('row_1_5')">Внешняя политика</div>
+	<div class = "navSf" id = "sf3" onclick = "goToSf('row_1_6')">Внутренняя политика</div>
+	<div class = "navSf" id = "sf4" onclick = "goToSf('econ')">Экономика</div>
+	<div class = "navSf" id = "sf5" onclick = "goToSf('socSf')">Социальная сфера</div>
+	<div class = "navSf" id = "sf6" onclick = "goToSf('row_1_18')">Армия</div>
+	<div class = "navSf" id = "sf7" onclick = "goToSf('strVl')">Структура власти</div>
+	<div class = "navSf" id = "sf8" onclick = "goToSf('row_1_25')">Законодательство</div>
+	<div class = "navSf" id = "sf9" onclick = "goToSf('row_1_26')">Территориальное устройство</div>
+	<div class = "navSf" id = "sf10" onclick = "goToSf('row_1_27')">Национальный вопрос</div>
+	<div class = "navSf" id = "sf11" onclick = "goToSf('row_1_28')">Политические идеологии</div>
+	<div class = "navSf" id = "sf12" onclick = "goToSf('row_1_29')">Религия/церковь</div>
+	<div class = "navSf" id = "sf13" onclick = "goToSf('row_1_30')">Итоги периода</div>
+	<div class = "navSf" id = "sf14" onclick = "goToSf('kult')">Культура</div>
+	<div class = "navSf" id = "sf15" onclick = "goToSf('row_1_43')">Персоналии</div>
+	<div class = "navSf" id = "sf16" onclick = "goToSf('row_1_44')">Понятия</div>
+	<div class = "navSf" id = "sf17" onclick = "goToSf('row_1_45')">Даты истории России</div>
+	<div class = "navSf" id = "sf18" onclick = "goToSf('row_1_46')">Мировая история</div>
+	<div class = "navSf" id = "sf19" onclick = "goToSf('row_1_47')">Договоры (названия)</div>
+	<div class = "navSf" id = "sf20" onclick = "goToSf('row_1_48')">Карты, важные места</div>
+	<div class = "navSf" id = "sf21" onclick = "goToSf('row_1_49')">Изображения</div>
+	<div class = "navSf" id = "sf22" onclick = "goToSf('row_1_50')">Анализ событий</div>
+	<div class = "navSf" id = "sf23" onclick = "goToSf('row_1_51')">Дискуссионные вопросы</div>
+</span>
+
+<script>
+let el = document.getElementsByClassName('navSf');
+// for (let i of el) {
+// 	i.onmouseover = function() {this.style.backgroundColor = 'RGB(152,217,234)';}
+// 	i.onmouseout = function() {this.style.backgroundColor = 'white';}
+// }
+
+for (let i=0;i<document.punkti.length;i++) {
+	if (document.punkti[i] != '1') el[i].style.display = 'none';
+}
+
+function goToSf(s) {
+	okNavSfer.style.display = 'none';
+	let el = document.getElementById(s);
+	el.scrollIntoView({block: "center", behavior: "smooth"});
+	el.style.backgroundColor = 'RGB(152,217,234)';
+	setTimeout(function() {el.style.backgroundColor = '';},1000);
+	setTimeout(function() {el.style.backgroundColor = 'RGB(152,217,234)';},2000);
+	setTimeout(function() {el.style.backgroundColor = '';},3000);
+	setTimeout(function() {el.style.backgroundColor = 'RGB(152,217,234)';},4000);
+	setTimeout(function() {el.style.backgroundColor = '';},5000);
+}
+
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+
+} else {
+document.addEventListener('mousemove',function() {
+	if (event.clientY > (document.documentElement.clientHeight - 20)) {
+		okNavSfer.style.display = 'block';
+		okNavSfer.style.top = document.documentElement.clientHeight - okNavSfer.clientHeight - 5 + 'px';
+		okNavSfer.style.left = event.clientX - okNavSfer.clientWidth/2 + 'px';
+		return;
+	}
+	let coor = okNavSfer.getBoundingClientRect();
+	if (event.clientX < coor.x || event.clientX > (coor.x + coor.width) || event.clientY < coor.y) okNavSfer.style.display = 'none';
+});
+
+}
+</script>

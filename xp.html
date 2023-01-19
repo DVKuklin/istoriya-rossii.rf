@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>история XP</title>
+    <style>
+        body {
+            background-color: #988381;
+        }
+        #colsCountGroup{
+            border: solid 2px #F6FFFF;
+            border-radius: 5px;
+            height: 40px;
+            background-color: #324E97;
+            width:120px;
+            display: inline-grid;
+            padding: 0;
+            grid-template-columns: auto 20px;
+            align-items: center;
+            position: relative;
+        }
+        #displayCountOfCols {
+            text-align: center;
+        }
+        #displayCountOfCols img {
+            transform: translateY(1px);
+        }
+        #strelkfForColsCountGroup {
+            text-align: center;
+        }
+        #strelkfForColsCountGroup img{
+            transform: translateY(2px);
+        }
+        #listOfCountOfCol {
+            position: absolute;
+            top: 42px;
+            left: 0px;
+            background-color: #324E97;
+            text-align: right;
+            padding: 5px;
+            width:110px;
+            display:none;
+        }
+        #listOfCountOfCol img {
+            transform: translateY(2px);
+        }
+        .listOfCountOfCol-item {
+            cursor:pointer;
+        }
+
+        .listOfCountOfCol-item:hover {
+            background-color:#98D9EA;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id = "colsCountGroup">
+        <div id="displayCountOfCols">
+            <img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png">
+        </div>
+        <div id="strelkfForColsCountGroup">
+            <img src="TRH/strelkfForColsCountGroup.png">
+            
+        </div>
+        <div id="listOfCountOfCol">
+            <div class="listOfCountOfCol-item">
+                <img src="TRH/column.png">
+            </div>
+            <div class="listOfCountOfCol-item">
+                <img src="TRH/column.png"><img src="TRH/column.png">
+            </div>
+            <div class="listOfCountOfCol-item">
+                <img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png">
+            </div>
+            <div class="listOfCountOfCol-item">
+                <img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png">
+            </div>
+            <div class="listOfCountOfCol-item">
+                <img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png"><img src="TRH/column.png">
+            </div>
+        </div>
+    </div>
+    <script>
+        colsCountGroup.onclick=function() {
+            listOfCountOfCol.style.display="block";
+            
+        }
+        let elItems = listOfCountOfCol.getElementsByClassName('listOfCountOfCol-item');
+        console.log(elItems);
+        for (let i=0;i<elItems.length;i++) {
+            elItems[i].onclick=function() {
+                
+                listOfCountOfCol.style.display="none";
+                event.stopPropagation();
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Подключаем ckeditor-->
+<script src="ckeditor/ckeditor/ckeditor.js"></script>
+
+
+
+<!--Окно выборы действия для вставки комментария картинки и т.д.-->
+<div id = "promt" class = "okvib" width = "100%">
+<center><h5>Выберите то что вставить</h5></center>
+<table rules = "all">
+<tr>
+<td>
+<input type = "radio" id = "rad_kom" name = "viborDeystviya">Комментарий</input><br>
+<input type = "text" value = "kom51_31_01" id = "input_kom" maxlength = "11"></input>
+</td>
+<td>
+<input type = "radio" id = "rad_Yakor" name = "viborDeystviya">Якорь</input><br>
+<input type = "text" value = "yak_" id = "input_Yakor"></input>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type = "radio" id = "rad_sYakor" name = "viborDeystviya">Ссылка на якорь</input><br>
+<input type = "text" value = "yak_" id = "input_sYakor" title = "Имя якоря"></input><br>
+<select id = "select_sYakor_col" title = "Номер столбика" size = "1">
+	<option value = "undefined"></option>
+</select><br>
+<select id = "select_sYakor_punkt" title = "Сфера">
+	<option value = "undefined"></option>
+	<option value = "0">Приход к власти</option>
+	<option value = "1">Общее опиисание правления</option>
+	<option value = "2">Внешняя политика</option>
+	<option value = "3">Внутренняя политика</option>
+	<option value = "4">Экономика</option>
+	<option value = "5">Социальная сфера</option>
+	<option value = "6">Армия</option>
+	<option value = "7">Структура власти</option>
+	<option value = "8">Законодательство</option>
+	<option value = "9">Территориальное устройство</option>
+	<option value = "10">Национальный вопрос</option>
+	<option value = "11">Политические идеологии</option>
+	<option value = "12">Религия/церковь</option>
+	<option value = "13">Итоги периода</option>
+	<option value = "14">Культура</option>
+	<option value = "15">Персоналии</option>
+	<option value = "16">Понятия</option>
+	<option value = "17">Даты истории России</option>
+	<option value = "18">Мировая история</option>
+	<option value = "19">Договоры (названия)</option>
+	<option value = "20">Карты, важные места</option>
+	<option value = "21">Изображения</option>
+	<option value = "22">Анализ событий</option>
+	<option value = "23">Дискуссионные вопросы</option>
+
+
+</select>
+</td>
+<td>
+<input type = "radio" id = "rad_im" name = "viborDeystviya">Картинка</input><br>
+Путь:<input type = "text" value = "TRH051/im43.jpg" id = "input_im"></input><br>
+Подпись:<input type = "text" id = "input_im_caption"></input>
+</td>
+</tr>
+<tr>
+<td align = "center"><input type = "radio" id = "rad_date" name = "viborDeystviya">Дата</input></td>
+<td align = "center"><input type = "radio" id = "rad_gray" name = "viborDeystviya">Выделить<br>серым</input></td>
+</tr>
+</table>
+<center><button onclick = "vstavka()">OK</button><button onclick = "promt.style.display = 'none';">Отмена</button></center>
+
+
+</div>
+
+<center>
+<p>
+<form id = "TRH_main_form" action = "TRH_edit.php" target = "_self" method = "post" onsubmit = "TRH_main_form_onsubmit();">
+  <input type = "submit" value = "Применить изменения"></input>
+</form>
+</p>
+</center>
+
+<!--Окошечко для показа сообщения-->
+<span id = "window_about_edit" style = "border:solid black 2px;background-color:yellow;position:absolute;display:none">Для редактирования нажмите Ctr+Q</span>
+
+<!--Окошко для редактирования картинок-->
+<span id = "window_for_edit_image" style = "border:solid black 2px;background-color:yellow;position:absolute;display:none">
+Путь к файлу<br>
+<input id = "editImageHref" type = "text"></input><br>
+Подпись<br>
+<input id = "editImageCaption" type = "text"></input><br>
+<button onclick = "editImage()">OK</button><br>
+<button onclick = "exitFromWindowForEdit();">Отмена</button>
+</span>
+
+<!--Окошко для редактирования ссылок на якоря-->
+<span id = "window_for_edit_sYak" style = "border:solid black 2px;background-color:yellow;position:absolute;display:none">
+Имя якоря<br>
+<input id = "editNameSYak" type = "text"></input><br>
+
+<select id = "select_sYakor_col_for_edit" title = "Номер столбика" size = "1">
+	<option value = "undefined"></option>
+</select>
+<br>
+<select id = "select_sYakor_punkt_for_edit" title = "Сфера">
+	<option value = "undefined"></option>
+	<option value = "0">Приход к власти</option>
+	<option value = "1">Общее опиисание правления</option>
+	<option value = "2">Внешняя политика</option>
+	<option value = "3">Внутренняя политика</option>
+	<option value = "4">Экономика</option>
+	<option value = "5">Социальная сфера</option>
+	<option value = "6">Армия</option>
+	<option value = "7">Структура власти</option>
+	<option value = "8">Законодательство</option>
+	<option value = "9">Территориальное устройство</option>
+	<option value = "10">Национальный вопрос</option>
+	<option value = "11">Политические идеологии</option>
+	<option value = "12">Религия/церковь</option>
+	<option value = "13">Итоги периода</option>
+	<option value = "14">Культура</option>
+	<option value = "15">Персоналии</option>
+	<option value = "16">Понятия</option>
+	<option value = "17">Даты истории России</option>
+	<option value = "18">Мировая история</option>
+	<option value = "19">Договоры (названия)</option>
+	<option value = "20">Карты, важные места</option>
+	<option value = "21">Изображения</option>
+	<option value = "22">Анализ событий</option>
+	<option value = "23">Дискуссионные вопросы</option>
+</select>
+<br>
+<button onclick = "editSYak()">OK</button><br>
+<button onclick = "exitFromWindowForEdit();">Отмена</button>
+</span>
+
+<!--Конец окошка для редактирования ссылок на якоря-->
+
+<!--Окошко для редактирования якорей-->
+<span id = "window_for_edit_yak" style = "border:solid black 2px;background-color:yellow;position:absolute;display:none">
+Имя якоря<br>
+<input id = "editNameYak" type = "text"></input><br>
+<button onclick = "editYak()">OK</button><br>
+<button onclick = "exitFromWindowForEdit();">Отмена</button>
+</span>
+<!--END Окошко для редактирования якорей-->
+
+<!--Окно для редактирования картинок в комментариях-->
+<div id = "komPromt" style = "display:none;position:absolute;background-color:RGB(192,192,192);border:solid black 1px">
+Вставка картинки<br>
+Путь:
+<input id = "komImRote" type = "text"></input><br>
+Подпись:
+<input id = "komImCaption" type = "text"></input>
+<br>
+<button id = "komImOk">OK</button>
+<button onclick = "komPromt.style.display = 'none'">Отмена</button>
+</div>
+<!--END Окно для редактирования картинок в комментариях-->
+<script src = "TRH098/TRH_edit.js?001"></script>

@@ -1,0 +1,148 @@
+   .skom {
+     background-color:RGB(192,192,192);
+	 cursor:pointer;
+   }
+   .okkom {
+     display:none;
+	 position:absolute;
+	 background-color:RGB(254,255,179);
+	 border:solid black 1px;
+	 max-width:50%;
+	 overflow:auto;
+   }
+
+.noSelect {
+	/*Это что бы нельзя было выделять текст в комментариях*/
+	-webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;
+	
+}
+
+#main_table {
+	border: solid 1px black;
+	border-collapse: collapse;
+}
+
+#main_table td {
+	border: solid 1px black;
+}
+
+   .kom {
+     background-color:RGB(254,255,179);
+	 padding:3px;
+   }
+   .zakr {
+     background-color:RGB(238,238,238);
+	 text-align:right;
+	 padding-top:4px;
+   }
+   .razdel_top {/*Выделение разделов жирной линией сверху ячейки*/
+	 border-top:solid black 3px !important;
+   }
+   .razdel_bottom {/*Выделение разделов жирной линией снизу ячейки*/
+	 border-bottom:solid black 3px !important;
+   }
+   .razdel_right {/*Выделение разделов жирной линией справо ячейки*/
+	 border-right:solid black 3px !important;
+   }
+   .date {
+	   color:#ff0000;
+	   font-style:italic;
+	   font-weight:bold;
+   }   
+   .okvib {
+     display:none;
+	 position:absolute;
+	 background-color:RGB(192,192,192);
+	 border:solid black 1px;
+   }
+   .gray {
+	   color:RGB(178,192,218);
+   }
+    .sYak {
+     background-color:RGB(139,245,75);
+	 cursor:pointer;
+   }
+   .td_menu_period_pravitel {
+	   padding:2px;
+	   font-weight:bold;
+	   text-align:left;
+	}
+	.TRH_buttons {
+		cursor:pointer;
+	}
+	.button_menu {
+		border:solid black 2px;
+		padding:5px;
+		border-radius:5px;
+	}
+	.radio {
+		border:solid black 1px;
+		border-radius:5px;
+		padding-top:3px;
+		padding-left:2px;
+	}
+	.vernutsya_k_tablice {
+		cursor:pointer;
+		color:blue;
+		text-decoration:underline;
+	}
+	.navigaciya {
+		padding:5px;
+		background-color:white;
+		border:solid black 2px;
+		position:fixed;
+		display:none;
+	}
+
+#con_for_image {
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	background-color:black;
+	overflow:hidden;
+	empty-cells:show;
+	color:red;
+	border:solid black 4px;
+}
+
+#con_for_im_caption {
+	position:fixed;
+	top:0;
+	width:100%;
+	background-color:white;
+	display:none;
+	left:0px;
+}
+
+.navSf {
+	cursor:pointer;
+}
+
+.minusPlus {
+	-webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;	
+}
+
+#okNavSfer {
+	background-color: white;
+	padding:4px;
+	border: solid black 1px;
+}
+
+#okNavSfer .navSf:hover {
+	background-color:rgb(77, 167, 153);
+}
